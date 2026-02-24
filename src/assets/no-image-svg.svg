@@ -1,0 +1,15 @@
+<svg width="250" height="250" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#f5f5f5"/>
+  
+  <!-- Circle border -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#999999" stroke-width="8"/>
+  
+  <!-- Text -->
+  <text x="200" y="180" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">
+    NO IMAGE
+  </text>
+  <text x="200" y="245" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">
+    AVAILABLE
+  </text>
+</svg>
