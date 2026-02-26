@@ -344,15 +344,15 @@ export function Features({ lang }: FeaturesProps) {
         >
           {[
             {
-              src: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+              src: "https://www.gensecurity.com/hs-fs/hubfs/GenSec_November%20Blog_Apartment%20Security%20System_1.jpg?width=1000&name=GenSec_November%20Blog_Apartment%20Security%20System_1.jpg",
               label: t.security,
             },
             {
-              src: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+              src: "https://thumbs.dreamstime.com/b/underground-parking-garage-modern-apartment-building-interior-underground-car-garage-apartment-building-144762919.jpg",
               label: t.parking,
             },
             {
-              src: playground,
+              src: "https://library.playlsi.com/transform/fec609cc-db3e-4dc4-8c43-41e1aa448420/CA-Rincon-Green-Apartments-014?io=transform:extend,width:1920,height:1080,background:f9f9f9",
               label: t.playground,
             },
           ].map((item, index) => (

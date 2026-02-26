@@ -97,8 +97,8 @@ export function Hero({ lang }: HeroProps) {
 
   // Get hero images from API or use fallback
   const heroImages = homepageData?.images?.map((img) => img.image) || [
-    "https://images.unsplash.com/photo-1649767146802-1d5baa586638?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBza3lzY3JhcGVyJTIwYnVpbGRpbmd8ZW58MXx8fHwxNzYwNzA1ODI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "https://images.unsplash.com/photo-1559329146-807aff9ff1fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMGV4dGVyaW9yfGVufDF8fHx8MTc2MDY0MTIxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "https://frankfurt.apollo.olxcdn.com/v1/files/594bevalo7zc3-UZ/image;s=3840x2160",
+    "https://cdn.riastatic.com/photosnew/dom/photo/prodaja-kvartira-hmelnitskiy-yugo-zapadnyy-kamenetskaya-ulitsa__297774585xl.jpg"
   ];
 
   useEffect(() => {
