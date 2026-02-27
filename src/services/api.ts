@@ -3,7 +3,7 @@ import axios from "axios";
 const lang = localStorage.getItem('lang')
 
 const API = axios.create({
-  baseURL: "https://api.fayzlixonadonlar.uz/",
+  baseURL: "https://bunyodkorhouse.pythonanywhere.com/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
