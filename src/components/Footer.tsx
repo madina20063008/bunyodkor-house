@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
-import logoImage from "figma:asset/a8a43a26e65999af3c44a75491176e4c425dc9f1.png";
+import logoImage from "../../public/favicon.jpg";
 import { getContact } from "../services/dataService"; // Adjust import path
 import { ContactInfo } from "../services/data.types"; // Adjust import path
 
@@ -51,7 +51,7 @@ export function Footer({ lang }: FooterProps) {
       legal: "Legal Information",
       privacy: "Privacy Policy",
       terms: "Terms of Use",
-      copyright: "© 2025 Fayzli Xonadonlar. All rights reserved.",
+      copyright: "© 2025 Bunyodkor House. All rights reserved.",
       address: "123 Amir Temur Street, Tashkent",
       phone: "+998 71 123 45 67",
       email: "info@fayzlixonadonlar.uz",
@@ -71,7 +71,7 @@ export function Footer({ lang }: FooterProps) {
       legal: "Правовая информация",
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
-      copyright: "© 2025 Fayzli Xonadonlar. Все права защищены.",
+      copyright: "© 2025 Bunyodkor House. Все права защищены.",
       address: "г. Ташкент, ул. Амира Темура, 123",
       phone: "+998 71 123 45 67",
       email: "info@fayzlixonadonlar.uz",
@@ -91,7 +91,7 @@ export function Footer({ lang }: FooterProps) {
       legal: "Huquqiy ma'lumot",
       privacy: "Maxfiylik siyosati",
       terms: "Foydalanish shartlari",
-      copyright: "© 2025 Fayzli Xonadonlar. Barcha huquqlar himoyalangan.",
+      copyright: "© 2025 Bunyodkor House. Barcha huquqlar himoyalangan.",
       address: "Toshkent sh., Amir Temur ko'chasi, 123",
       phone: "+998 71 123 45 67",
       email: "info@fayzlixonadonlar.uz",
@@ -111,7 +111,7 @@ export function Footer({ lang }: FooterProps) {
       legal: "المعلومات القانونية",
       privacy: "سياسة الخصوصية",
       terms: "شروط الاستخدام",
-      copyright: "© 2025 Fayzli Xonadonlar. جميع الحقوق محفوظة.",
+      copyright: "© 2025 Bunyodkor House. جميع الحقوق محفوظة.",
       address: "طشقند، شارع أمير تيمور، 123",
       phone: "+998 71 123 45 67",
       email: "info@fayzlixonadonlar.uz",
@@ -131,7 +131,7 @@ export function Footer({ lang }: FooterProps) {
       legal: "法律信息",
       privacy: "隐私政策",
       terms: "使用条款",
-      copyright: "© 2025 Fayzli Xonadonlar. 版权所有。",
+      copyright: "© 2025 Bunyodkor House. 版权所有。",
       address: "塔什干市，阿米尔·帖木儿街123号",
       phone: "+998 71 123 45 67",
       email: "info@fayzlixonadonlar.uz",
@@ -178,21 +178,20 @@ export function Footer({ lang }: FooterProps) {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src={logoImage}
-                alt="Fayzli Xonadonlar"
-                className="h-16 w-auto"
+                alt="Bunyodkor House"
+                className="h-[150px] w-auto"
               />
             </div>
             <p className="text-white/70 mb-4">
               {lang === "ru"
                 ? "Строим дома мечты в любом регионе Узбекистана с 2014 года."
                 : lang === "uz"
-                ? "2014 yildan beri O'zbekistonning istalgan hududida orzu uylarini quramiz."
-                : lang === "en"
-                ? "Since 2014, we have been building dream homes with the help of Uzbekistan."
-                : lang === "ar"
-                ? "نبني منازل الأحلام في أي منطقة في أوزبكستان منذ عام 2014."
-                : "自2014年以来在乌兹别克斯坦任何地区建造梦想之家。"} 
-                
+                  ? "2014 yildan beri O'zbekistonning istalgan hududida orzu uylarini quramiz."
+                  : lang === "en"
+                    ? "Since 2014, we have been building dream homes with the help of Uzbekistan."
+                    : lang === "ar"
+                      ? "نبني منازل الأحلام في أي منطقة في أوزبكستان منذ عام 2014."
+                      : "自2014年以来在乌兹别克斯坦任何地区建造梦想之家。"}
             </p>
           </div>
 

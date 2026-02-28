@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import logoImage from "figma:asset/a8a43a26e65999af3c44a75491176e4c425dc9f1.png";
+import logoImage from "../../public/favicon.jpg";
 
 interface HeaderProps {
   lang: "en" | "ru" | "uz" | "ar" | "zh";
@@ -99,16 +99,16 @@ export function Header({ lang, setLang }: HeaderProps) {
   const handleCallbackClick = () => {
     // Option 1: Scroll to contact form
     scrollToSection("contacts");
-    
+
     // Option 2: Show a callback modal
     // setShowCallbackModal(true);
-    
+
     // Option 3: Open phone app (for mobile)
     // window.location.href = "tel:+998711234567";
-    
+
     // Option 4: Navigate to callback page
     // navigate("/callback-request");
-    
+
     setMobileMenuOpen(false);
   };
 
@@ -125,8 +125,8 @@ export function Header({ lang, setLang }: HeaderProps) {
               >
                 <img
                   src={logoImage}
-                  alt="Fayzli Xonadonlar"
-                  className="h-11 w-[200px] md:w-auto cursor-pointer"
+                  alt="Bunyodkor House"
+                  className="h-[70px] w-[100px] md:w-auto cursor-pointer"
                 />
               </button>
             </div>
@@ -188,9 +188,9 @@ export function Header({ lang, setLang }: HeaderProps) {
                   <SelectItem value="zh">中文</SelectItem>
                 </SelectContent>
               </Select>
-              
+
               {/* UPDATED BUTTON WITH onClick HANDLER */}
-              <Button 
+              <Button
                 onClick={handleCallbackClick}
                 className="bg-accent text-accent-foreground hover:bg-accent/90 h-9 text-sm"
               >
@@ -283,7 +283,7 @@ export function Header({ lang, setLang }: HeaderProps) {
               </Select>
 
               {/* UPDATED MOBILE BUTTON */}
-              <Button 
+              <Button
                 onClick={handleCallbackClick}
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
               >
@@ -304,7 +304,7 @@ export function Header({ lang, setLang }: HeaderProps) {
             </h3>
             <p className="mb-4">We'll call you back within 15 minutes.</p>
             {/* Add form fields here */}
-            <button 
+            <button
               onClick={() => setShowCallbackModal(false)}
               className="mt-4 px-4 py-2 bg-gray-200 rounded"
             >

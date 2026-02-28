@@ -12,7 +12,7 @@ import React from "react";
 import { getCommonHouse } from "../services/dataService";
 import { ReadyHome } from "../services/data.types";
 interface ApartmentFiltersProps {
-  lang:"en" | "ru" | "uz" | "ar" | "zh";
+  lang: "en" | "ru" | "uz" | "ar" | "zh";
   onFilterChange: (filters: FilterValues) => void;
   totalResults: number;
 }
@@ -102,7 +102,7 @@ const translations = {
 // Mock projects data - API dan kelgan loyihalar ro'yxati
 // const projectOptions = [
 //   { value: "all", label: "allProjects" },
-//   { value: "FAYZLI XONADONLAR", label: "FAYZLI XONADONLAR" },
+//   { value: "Bunyodkor House", label: "Bunyodkor House" },
 //   { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
 //   { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
 //   { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
@@ -143,7 +143,7 @@ export function ApartmentFilters({
 
   const newOpt = [
     { value: "all", label: "allProjects" },
-    // { value: "FAYZLI XONADONLAR", label: "FAYZLI XONADONLAR" },
+    // { value: "Bunyodkor House", label: "Bunyodkor House" },
     // { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
     // { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
     // { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
@@ -158,7 +158,7 @@ export function ApartmentFilters({
 
   // const projectOptions = [
   //   { value: "all", label: "allProjects" },
-  //   { value: "FAYZLI XONADONLAR", label: "FAYZLI XONADONLAR" },
+  //   { value: "Bunyodkor House", label: "Bunyodkor House" },
   //   { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
   //   { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
   //   { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
@@ -290,7 +290,7 @@ export function ApartmentFilters({
               <SelectTrigger className="w-full border-2 border-gray-300 rounded-full py-3 px-4 hover:border-[#526C6C] transition-colors">
                 <SelectValue>
                   {getProjectLabel(
-                    projectOptions.find((p) => p.value === filters.projects)!
+                    projectOptions.find((p) => p.value === filters.projects)!,
                   )}
                 </SelectValue>
               </SelectTrigger>

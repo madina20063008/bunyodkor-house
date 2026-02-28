@@ -32,11 +32,11 @@ export function Regions({ lang }: RegionsProps) {
     id: 1,
     latitude: 38.8151,
     longitude: 65.7152,
-    address_uz: "Fayzli Xonadonlar",
-    address_ru: "Fayzli Xonadonlar",
-    address_ar: "Fayzli Xonadonlar",
-    address_en: "Fayzli Xonadonlar",
-    address_zh_hans: "Fayzli Xonadonlar",
+    address_uz: "Bunyodkor House",
+    address_ru: "Bunyodkor House",
+    address_ar: "Bunyodkor House",
+    address_en: "Bunyodkor House",
+    address_zh_hans: "Bunyodkor House",
     description_uz: "Asosiy ofis va loyiha joylashuvi",
     description_ru: "Главный офис и место проекта",
     description_en: "Head office and project location",
@@ -112,7 +112,13 @@ export function Regions({ lang }: RegionsProps) {
 
   const t = translations[lang];
 
-  const getRegionName = (en: string, ru: string, uz: string, ar: string, zh: string) => {
+  const getRegionName = (
+    en: string,
+    ru: string,
+    uz: string,
+    ar: string,
+    zh: string,
+  ) => {
     switch (lang) {
       case "en":
         return en || "";
@@ -165,7 +171,7 @@ export function Regions({ lang }: RegionsProps) {
                       el?.address_ru || "",
                       el?.address_uz || "",
                       el?.address_ar || "",
-                      el?.address_zh_hans || ""
+                      el?.address_zh_hans || "",
                     )}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -174,7 +180,7 @@ export function Regions({ lang }: RegionsProps) {
                       el?.description_ru || "",
                       el?.description_uz || "",
                       el?.description_ar || "",
-                      el?.description_zh_hans || ""
+                      el?.description_zh_hans || "",
                     )}
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
