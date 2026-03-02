@@ -112,6 +112,7 @@ const PropertyCard: React.FC<PropertyCardProps & { lang: 'en' | 'ru' | 'uz' | 'z
 
   return (
     <div 
+      id="our-projects"
       onClick={handleClick}
       className="flex group cursor-pointer"
     >
@@ -279,7 +280,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ lang }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
+      <div id="our-projects" className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl mb-4 text-primary">
             {t.ourProjects}
@@ -294,7 +295,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ lang }) => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
+      <div id="our-projects" className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl mb-4 text-primary">
             {t.ourProjects}
@@ -308,7 +309,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ lang }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
+    <div id="our-projects" className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center text-3xl md:text-4xl mb-12 text-primary">
           {t.ourProjects}

@@ -252,19 +252,24 @@ export function Contact({ lang }: ContactProps) {
   const fallbackData = {
     address:
       lang === "ru"
-        ? "г. Ташкент, ул. Амира Темура, 123"
+        ? "г. Карши, квартал Гунгон, улица Алишера Навои, дом 6"
         : lang === "uz"
-        ? "Toshkent sh., Amir Temur ko'chasi, 123"
+        ? "Qarshi shahri, Gungon mahallasi, Alisher Navoiy ko'chasi 6-uy"
+        : lang === "en"
+        ? "Karshi city, Gungon neighborhood, Alisher Navoiy street, house 6"
         : lang === "ar"
-        ? "طشقند، شارع أمير تيمور، 123"
-        : "塔什干市，阿米尔·帖木儿街123号",
-    phone: "+998 71 123 45 67",
-    email: "info@fayzlixonadonlar.uz",
+        ? "طشقند، شارع أمير تيمور، مدينة كرشي حي جونجون شارع عليشر نووي منزل 6"
+        : "卡爾希市，Gungon 社區，Alisher Navoiy 街，6 號房",
+    phone1: "+998 77 742 49 94",
+    phone2: "+998 77 742 48 84",
+    email: "info@bunyonkorhouse.uz",
     workTime:
       lang === "ru"
         ? "Пн-Пт: 9:00 - 18:00, Сб: 9:00 - 14:00"
         : lang === "uz"
         ? "Du-Ju: 9:00 - 18:00, Sh: 9:00 - 14:00"
+        : lang === "en"
+        ? "Mon-Fri: 9:00 - 18:00, Sh: 9:00 - 14:00"
         : lang === "ar"
         ? "الاثنين-الجمعة: 9:00 - 18:00، السبت: 9:00 - 14:00"
         : "周一至周五：9:00 - 18:00，周六：9:00 - 14:00",
@@ -293,7 +298,8 @@ export function Contact({ lang }: ContactProps) {
   // Use API data or fallback data
   const displayData = contactData || {
     full_address: fallbackData.address,
-    phone_number: fallbackData.phone,
+    phone_number1: fallbackData.phone1,
+    phone_number2: fallbackData.phone2,
     email: fallbackData.email,
     work_time: fallbackData.workTime,
   };
@@ -501,7 +507,8 @@ export function Contact({ lang }: ContactProps) {
                 <div>
                   <h3 className="mb-2">{t.phoneLabel}</h3>
                   <p className="text-muted-foreground">
-                    {displayData.phone_number}
+                    {displayData.phone_number1} <br/>
+                    {displayData.phone_number2}
                   </p>
                 </div>
               </motion.div>

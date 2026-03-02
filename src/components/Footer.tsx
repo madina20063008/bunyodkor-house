@@ -14,7 +14,7 @@ export function Footer({ lang }: FooterProps) {
   const [contactData, setContactData] = useState<ContactInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     const fetchContactData = async () => {
       try {
@@ -35,7 +35,23 @@ export function Footer({ lang }: FooterProps) {
 
     fetchContactData();
   }, []);
-
+ const scrollToSection = (id: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
   const translations = {
     en: {
       company: "Company",
@@ -52,9 +68,10 @@ export function Footer({ lang }: FooterProps) {
       privacy: "Privacy Policy",
       terms: "Terms of Use",
       copyright: "© 2025 Bunyodkor House. All rights reserved.",
-      address: "123 Amir Temur Street, Tashkent",
-      phone: "+998 71 123 45 67",
-      email: "info@fayzlixonadonlar.uz",
+      address: "Karshi city, Gungon neighborhood, Alisher Navoiy street, house 6",
+      phone1: "+998 77 742 49 94",
+      phone2: "+998 77 742 48 84",
+      email: "info@bunyonkorhouse.uz",
       loading: "Loading contact information...",
     },
     ru: {
@@ -72,9 +89,10 @@ export function Footer({ lang }: FooterProps) {
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
       copyright: "© 2025 Bunyodkor House. Все права защищены.",
-      address: "г. Ташкент, ул. Амира Темура, 123",
-      phone: "+998 71 123 45 67",
-      email: "info@fayzlixonadonlar.uz",
+      address: "г. Карши, квартал Гунгон, улица Алишера Навои, дом 6",
+      phone1: "+998 77 742 49 94",
+      phone2: "+998 77 742 48 84",
+      email: "info@bunyonkorhouse.uz",
       loading: "Загрузка контактной информации...",
     },
     uz: {
@@ -92,9 +110,10 @@ export function Footer({ lang }: FooterProps) {
       privacy: "Maxfiylik siyosati",
       terms: "Foydalanish shartlari",
       copyright: "© 2025 Bunyodkor House. Barcha huquqlar himoyalangan.",
-      address: "Toshkent sh., Amir Temur ko'chasi, 123",
-      phone: "+998 71 123 45 67",
-      email: "info@fayzlixonadonlar.uz",
+      address: "Qarshi shahri, Gungon mahallasi, Alisher Navoiy ko'chasi 6-uy",
+      phone1: "+998 77 742 49 94",
+      phone2: "+998 77 742 48 84",
+      email: "info@bunyonkorhouse.uz",
       loading: "Kontakt ma'lumotlari yuklanmoqda...",
     },
     ar: {
@@ -112,9 +131,10 @@ export function Footer({ lang }: FooterProps) {
       privacy: "سياسة الخصوصية",
       terms: "شروط الاستخدام",
       copyright: "© 2025 Bunyodkor House. جميع الحقوق محفوظة.",
-      address: "طشقند، شارع أمير تيمور، 123",
-      phone: "+998 71 123 45 67",
-      email: "info@fayzlixonadonlar.uz",
+      address: "طشقند، شارع أمير تيمور، مدينة كرشي حي جونجون شارع عليشر نووي منزل 6",
+      phone1: "+998 77 742 49 94",
+      phone2: "+998 77 742 48 84",
+      email: "info@bunyonkorhouse.uz",
       loading: "جاري تحميل معلومات الاتصال...",
     },
     zh: {
@@ -132,9 +152,10 @@ export function Footer({ lang }: FooterProps) {
       privacy: "隐私政策",
       terms: "使用条款",
       copyright: "© 2025 Bunyodkor House. 版权所有。",
-      address: "塔什干市，阿米尔·帖木儿街123号",
-      phone: "+998 71 123 45 67",
-      email: "info@fayzlixonadonlar.uz",
+      address: "卡爾希市，Gungon 社區，Alisher Navoiy 街，6 號房",
+      phone1: "+998 77 742 49 94",
+      phone2: "+998 77 742 48 84",
+      email: "info@bunyonkorhouse.uz",
       loading: "正在加载联系信息...",
     },
   };
@@ -144,14 +165,16 @@ export function Footer({ lang }: FooterProps) {
   // Fallback data in case API fails
   const fallbackData = {
     address: t.address,
-    phone: t.phone,
+    phone1: t.phone1,
+    phone2: t.phone2,
     email: t.email,
   };
 
   // Use API data or fallback data
   const displayData = contactData || {
     full_address: fallbackData.address,
-    phone_number: fallbackData.phone,
+    phone_number1: fallbackData.phone1,
+    phone_number2: fallbackData.phone2,
     email: fallbackData.email,
   };
 
@@ -201,7 +224,7 @@ export function Footer({ lang }: FooterProps) {
             <ul className="space-y-2 text-white/70">
               <li>
                 <button
-                  onClick={scrollToTop}
+                  onClick={() => scrollToSection("about")}
                   className="hover:text-white transition-colors"
                 >
                   {t.aboutUs}
@@ -209,7 +232,7 @@ export function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={scrollToTop}
+                  onClick={() => scrollToSection("our-projects")}
                   className="hover:text-white transition-colors"
                 >
                   {t.projects}
@@ -217,7 +240,7 @@ export function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={scrollToTop}
+                  onClick={() => scrollToSection("contacts")}
                   className="hover:text-white transition-colors"
                 >
                   {t.contacts}
@@ -240,7 +263,7 @@ export function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={scrollToTop}
+                  onClick={() => scrollToSection("construction")}
                   className="hover:text-white transition-colors"
                 >
                   {t.construction}
@@ -248,28 +271,28 @@ export function Footer({ lang }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={scrollToTop}
+                  onClick={() => scrollToSection("ready")}
                   className="hover:text-white transition-colors"
                 >
                   {t.readyHomes}
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
-                  onClick={() => navigate("/investment")}
+                  onClick={() => scrollToSection("inverstment")}
                   className="hover:text-white transition-colors"
                 >
                   {t.investment}
                 </button>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <button
                   onClick={scrollToTop}
                   className="hover:text-white transition-colors"
                 >
                   {t.consulting}
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -283,7 +306,11 @@ export function Footer({ lang }: FooterProps) {
               </li>
               <li className="flex items-center gap-2 text-white/70">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span className="text-sm">{displayData.phone_number}</span>
+                <span className="text-sm">{displayData.phone_number1}</span>
+              </li>
+              <li className="flex items-center gap-2 text-white/70">
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                <span className="text-sm">{displayData.phone_number2}</span>
               </li>
               <li className="flex items-center gap-2 text-white/70">
                 <Mail className="w-5 h-5 flex-shrink-0" />
@@ -297,14 +324,14 @@ export function Footer({ lang }: FooterProps) {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">{t.copyright}</p>
-            <div className="flex gap-6 text-sm text-white/70">
+            {/* <div className="flex gap-6 text-sm text-white/70">
               <a href="#" className="hover:text-white transition-colors">
                 {t.privacy}
               </a>
               <a href="#" className="hover:text-white transition-colors">
                 {t.terms}
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

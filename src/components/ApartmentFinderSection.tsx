@@ -428,7 +428,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
 
   if (loading) {
     return (
-      <section className="py-20 bg-gray-50" ref={ref}>
+      <section id="ready" className="py-20 bg-gray-50" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-12">
             <Loader2 className="w-8 h-8 animate-spin text-[#526C6C] mx-auto mb-4" />
@@ -441,7 +441,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
 
   if (error && homes.length === 0) {
     return (
-      <section className="py-20 bg-gray-50" ref={ref}>
+      <section id="ready" className="py-20 bg-gray-50" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-12">
             <Home className="w-16 h-16 text-gray-300 mx-auto mb-4" />
@@ -453,7 +453,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
   }
 
   return (
-    <section className="py-20 bg-gray-50" ref={ref}>
+    <section id="ready" className="py-20 bg-gray-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -198,7 +198,8 @@ export interface ContactInfo {
   full_address: string;
   longitude: string;
   latitude: number;
-  phone_number: number;
+  phone_number1: number;
+  phone_number2: number;
   email: string;
   work_time: string;
 }

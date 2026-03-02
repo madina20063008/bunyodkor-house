@@ -257,7 +257,7 @@ export function ReadyHomes({ lang }: ReadyHomesProps) {
 
   if (loading) {
     return (
-      <section id="ready" className="py-20 bg-white">
+      <section id="ready-homes" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-col items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
@@ -270,7 +270,7 @@ export function ReadyHomes({ lang }: ReadyHomesProps) {
 
   if (error) {
     return (
-      <section id="ready" className="py-20 bg-white">
+      <section id="ready-homes" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <div className="text-red-500 text-lg mb-4">{t.error}</div>
@@ -286,7 +286,7 @@ export function ReadyHomes({ lang }: ReadyHomesProps) {
   }
 
   return (
-    <section id="ready" className="py-20 bg-white" ref={ref}>
+    <section id="ready-homes" className="py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Debug info */}
         <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">

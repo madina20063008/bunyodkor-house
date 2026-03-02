@@ -10,6 +10,7 @@ import { Footer } from './Footer';
 import { ApartmentFinderSection } from './ApartmentFinderSection';
 import OurProjects from './OurProjects';
 import React from "react";
+import { ReadyHomes } from './ReadyHomes';
 
 interface HomePageProps {
   lang: "en" | "ru" | "uz" | "ar" | "zh";
