@@ -329,7 +329,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
 
   if (error || !project) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
+      <div className="!mt-[20px] min-h-screen bg-white flex flex-col items-center justify-center">
         <div className="text-lg text-red-600 mb-4">{error || t.notFound}</div>
         <button
           type="button"
@@ -390,7 +390,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
 
         {/* Navigation - HIGHEST z-index */}
         <nav
-          className="relative z-50 flex items-center justify-between px-8 text-white pt-20"
+          className="relative z-50 flex items-center justify-between px-8 text-white pt-24"
           style={{ zIndex: 100 }}
         >
           <div className="flex items-center gap-4">

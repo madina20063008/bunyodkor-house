@@ -84,6 +84,7 @@ const translations = {
     prev: "Previous",
     next: "Next",
     of: "of",
+    gym: "Gym"
   },
   ru: {
     details: "Детали недвижимости",
@@ -130,6 +131,7 @@ const translations = {
     prev: "Назад",
     next: "Вперед",
     of: "из",
+    gym: "Спортзал"
   },
   uz: {
     details: "Ko'chmas mulk tafsilotlari",
@@ -176,6 +178,7 @@ const translations = {
     prev: "Oldingi",
     next: "Keyingi",
     of: "dan",
+    gym: "Sportzal"
   },
   ar: {
     details: "تفاصيل العقار",
@@ -222,6 +225,7 @@ const translations = {
     prev: "السابق",
     next: "التالي",
     of: "من",
+    gym: "نادي رياضي"
   },
   zh: {
     details: "房产详情",
@@ -268,6 +272,7 @@ const translations = {
     prev: "上一张",
     next: "下一张",
     of: "共",
+    gym: "健身房"
   },
 };
 
@@ -549,31 +554,27 @@ export function HomeDetailsPage({ lang }: HomeDetailsPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b">
-        <div className="container mx-auto px-6 py-4">
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-8">
+        <div className="hover:text-white py-4 mt-16">
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className="gap-2"
+            className="gap-2 hover:text-white"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 hover:text-white" />
             {t.backToHome}
           </Button>
         </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-6 py-8">
         {/* Title Section */}
         <div className="mb-8">
           <h1 className="text-4xl mb-4">{homeName}</h1>
           <div className="flex items-center gap-3">
             <Badge
               variant="secondary"
-              className="bg-accent text-accent-foreground px-4 py-2"
+              className="bg-accent px-4 py-2 text-white"
             >
-              <MapPin className="w-4 h-4 mr-2" />
+              <MapPin className="w-4 h-4 mr-2 text-white" />
               {homeRegion}
             </Badge>
             <Badge variant="outline" className="px-4 py-2">
@@ -905,6 +906,7 @@ export function HomeDetailsPage({ lang }: HomeDetailsPageProps) {
                       t.playground,
                       t.balcony,
                       t.garden,
+                      t.gym,
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -931,11 +933,11 @@ export function HomeDetailsPage({ lang }: HomeDetailsPageProps) {
                   </Button>
                   <Button
                     size="lg"
-                    className="bg-accent text-accent-foreground hover:bg-accent/90 h-14 text-lg"
+                    className="text-white bg-accent hover:bg-accent/90 h-14 text-lg"
                   >
                     {t.buyNow}
                   </Button>
-                  <Button size="lg" variant="outline" className="h-12">
+                  <Button size="lg" variant="outline" className="h-12 hover:text-white">
                     {t.contactManager}
                   </Button>
                 </div>
