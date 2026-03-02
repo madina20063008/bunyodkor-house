@@ -221,9 +221,9 @@ export function About({ lang }: AboutProps) {
         {/* Team Photo */}
         <div className="mt-16">
           <img
-            src="https://images.unsplash.com/photo-1684497404598-6e844dff9cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjB0ZWFtJTIwd29ya2Vyc3xlbnwxfHx8fDE3NjA2NzM5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://static.vecteezy.com/system/resources/previews/002/268/520/large_2x/crane-at-construction-site-free-photo.jpg"
             alt="Team"
-            className="w-full h-96 object-cover rounded-2xl shadow-lg"
+            className="w-full h-[500px] object-cover rounded-2xl shadow-lg"
           />
         </div>
       </div>
