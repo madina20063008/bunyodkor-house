@@ -132,17 +132,17 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
   // Memoized helper functions
   const getMemoizedHomeImage = useCallback(
     (home: ReadyHome) => getHomeImage(home),
-    []
+    [],
   );
 
   const getMemoizedHomeName = useCallback(
     (home: ReadyHome) => getHomeName(home, lang),
-    [lang]
+    [lang],
   );
 
   const getMemoizedHomeRegion = useCallback(
     (home: ReadyHome) => getHomeRegion(home, lang),
-    [lang]
+    [lang],
   );
 
   // Filter apartments based on current filter values
@@ -224,9 +224,9 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <section className="bg-gradient-to-br from-[#526C6C] to-[#3d5252] text-white py-16">
+        <section className="bg-gradient-to-br from-[#0F2B4B] to-[#3d5252] text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-[#C8A961] mb-4">{t.title}</h1>
+            <h1 className="text-[#C2410C] mb-4">{t.title}</h1>
             <p className="text-xl text-gray-100">{t.subtitle}</p>
           </div>
         </section>
@@ -240,9 +240,9 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <section className="bg-gradient-to-br from-[#526C6C] to-[#3d5252] text-white py-16">
+        <section className="bg-gradient-to-br from-[#0F2B4B] to-[#3d5252] text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-[#C8A961] mb-4">{t.title}</h1>
+            <h1 className="text-[#C2410C] mb-4">{t.title}</h1>
             <p className="text-xl text-gray-100">{t.subtitle}</p>
           </div>
         </section>
@@ -258,7 +258,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#526C6C] to-[#3d5252] text-white py-16">
+      <section className="bg-gradient-to-br from-[#0F2B4B] to-[#3d5252] text-white py-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -266,7 +266,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-[#C8A961] mb-4">{t.title}</h1>
+            <h1 className="text-[#C2410C] mb-4">{t.title}</h1>
             <p className="text-xl text-gray-100">{t.subtitle}</p>
           </motion.div>
         </div>
@@ -329,7 +329,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
                         }}
                       />
                     </div>
-                    <div className="absolute top-4 right-4 bg-[#C8A961] text-white px-3 py-1 rounded-full text-sm">
+                    <div className="absolute top-4 right-4 bg-[#C2410C] text-white px-3 py-1 rounded-full text-sm">
                       {getYearBuilt(home.yearBuilt)}
                     </div>
                   </div>
@@ -343,7 +343,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
                     {/* Property Details */}
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-gray-600">
-                        <MapPin className="w-4 h-4 mr-2 text-[#526C6C]" />
+                        <MapPin className="w-4 h-4 mr-2 text-[#0F2B4B]" />
                         <span className="text-sm">
                           {getMemoizedHomeRegion(home)}
                         </span>
@@ -351,7 +351,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
 
                       <div className="flex items-center gap-4 text-sm text-gray-600">
                         <div className="flex items-center">
-                          <Maximize className="w-4 h-4 mr-1 text-[#526C6C]" />
+                          <Maximize className="w-4 h-4 mr-1 text-[#0F2B4B]" />
                           <span>
                             {home.area} {t.area}
                           </span>
@@ -368,8 +368,8 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
                     {/* Price */}
                     <div className="mb-4 pb-4 border-b border-gray-200">
                       <div className="flex items-baseline gap-2">
-                        <DollarSign className="w-5 h-5 text-[#C8A961]" />
-                        <span className="text-[#526C6C]">
+                        <DollarSign className="w-5 h-5 text-[#C2410C]" />
+                        <span className="text-[#0F2B4B]">
                           {formatPrice(home.price)}
                         </span>
                         <span className="text-gray-500 text-sm">{t.price}</span>
@@ -383,7 +383,7 @@ export function ApartmentCatalogPage({ lang }: ApartmentCatalogPageProps) {
                     <div className="mt-auto">
                       <Button
                         onClick={() => navigate(`/home/${home.id}`)}
-                        className="w-full bg-[#526C6C] hover:bg-[#3d5252] text-white"
+                        className="w-full bg-[#0F2B4B] hover:bg-[#3d5252] text-white"
                       >
                         {t.viewDetails}
                       </Button>

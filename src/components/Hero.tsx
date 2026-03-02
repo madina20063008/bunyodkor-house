@@ -230,7 +230,7 @@ export function Hero({ lang }: HeroProps) {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("ready")}
-                className="bg-primary hover:bg-primary/90"
+                className="bg-[#0F2B4B] hover:bg-[#1A3A5F]"
               >
                 {t.cta1}
               </Button>
@@ -239,7 +239,7 @@ export function Hero({ lang }: HeroProps) {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("contacts")}
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                className="bg-[#C2410C] text-white hover:bg-[#9A3412]"
               >
                 {t.cta2}
               </Button>

@@ -20,7 +20,7 @@ export function Header({ lang, setLang }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showCallbackModal, setShowCallbackModal] = useState(false); // Add this state
+  const [showCallbackModal, setShowCallbackModal] = useState(false);
 
   const translations = {
     en: {
@@ -95,20 +95,8 @@ export function Header({ lang, setLang }: HeaderProps) {
     setMobileMenuOpen(false);
   };
 
-  // Add this function to handle callback button click
   const handleCallbackClick = () => {
-    // Option 1: Scroll to contact form
     scrollToSection("contacts");
-
-    // Option 2: Show a callback modal
-    // setShowCallbackModal(true);
-
-    // Option 3: Open phone app (for mobile)
-    // window.location.href = "tel:+998711234567";
-
-    // Option 4: Navigate to callback page
-    // navigate("/callback-request");
-
     setMobileMenuOpen(false);
   };
 
@@ -138,31 +126,31 @@ export function Header({ lang, setLang }: HeaderProps) {
                   navigate("/catalog");
                   setMobileMenuOpen(false);
                 }}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-blue-600 transition-colors"
               >
                 {t.catalog}
               </button>
               <button
                 onClick={() => scrollToSection("construction")}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-blue-600 transition-colors"
               >
                 {t.construction}
               </button>
               <button
                 onClick={() => scrollToSection("regions")}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-blue-600 transition-colors"
               >
                 {t.regions}
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-blue-600 transition-colors"
               >
                 {t.about}
               </button>
               <button
                 onClick={() => scrollToSection("contacts")}
-                className="text-sm text-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-blue-600 transition-colors"
               >
                 {t.contacts}
               </button>
@@ -176,23 +164,23 @@ export function Header({ lang, setLang }: HeaderProps) {
                   setLang(value as "en" | "ru" | "uz" | "ar" | "zh")
                 }
               >
-                <SelectTrigger className="w-[140px] h-9">
-                  <Globe className="w-4 h-4 mr-2" />
+                <SelectTrigger className="w-[140px] h-9 border-gray-300 focus:ring-2 focus:ring-[#0F2B4B] focus:border-[#0F2B4B] data-[state=open]:border-[#0F2B4B] data-[state=open]:ring-2 data-[state=open]:ring-[#0F2B4B]">
+                  <Globe className="w-4 h-4 mr-2 text-gray-500" />
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ru">Русский</SelectItem>
-                  <SelectItem value="uz">O'zbek</SelectItem>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="ar">العربية</SelectItem>
-                  <SelectItem value="zh">中文</SelectItem>
+                <SelectContent className="border-gray-200 shadow-lg">
+                  <SelectItem value="ru" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">Русский</SelectItem>
+                  <SelectItem value="uz" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">O'zbek</SelectItem>
+                  <SelectItem value="en" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">English</SelectItem>
+                  <SelectItem value="ar" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">العربية</SelectItem>
+                  <SelectItem value="zh" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">中文</SelectItem>
                 </SelectContent>
               </Select>
 
-              {/* UPDATED BUTTON WITH onClick HANDLER */}
+              {/* Callback Button with Warm Terracotta */}
               <Button
                 onClick={handleCallbackClick}
-                className="bg-accent text-accent-foreground hover:bg-accent/90 h-9 text-sm"
+                className="bg-[#C2410C] text-white hover:bg-[#9A3412] h-9 text-sm transition-colors duration-200"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 {t.callBack}
@@ -205,9 +193,9 @@ export function Header({ lang, setLang }: HeaderProps) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 text-gray-700" />
               ) : (
-                <Menu className="w-6 h-6 " />
+                <Menu className="w-6 h-6 text-gray-700" />
               )}
             </button>
           </div>
@@ -215,11 +203,11 @@ export function Header({ lang, setLang }: HeaderProps) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t">
+          <div className="lg:hidden bg-white border-t border-gray-200">
             <nav className="flex flex-col px-4 py-4 gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.home}
               </button>
@@ -228,37 +216,37 @@ export function Header({ lang, setLang }: HeaderProps) {
                   navigate("/catalog");
                   setMobileMenuOpen(false);
                 }}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.catalog}
               </button>
               <button
                 onClick={() => scrollToSection("construction")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.construction}
               </button>
               <button
                 onClick={() => scrollToSection("ready")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.ready}
               </button>
               <button
                 onClick={() => scrollToSection("regions")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.regions}
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.about}
               </button>
               <button
                 onClick={() => scrollToSection("contacts")}
-                className="text-left text-sm text-foreground hover:text-primary transition-colors"
+                className="text-left text-sm text-foreground hover:text-[#0F2B4B] transition-colors py-2"
               >
                 {t.contacts}
               </button>
@@ -269,23 +257,23 @@ export function Header({ lang, setLang }: HeaderProps) {
                   setLang(value as "en" | "ru" | "uz" | "ar" | "zh")
                 }
               >
-                <SelectTrigger className="w-full">
-                  <Globe className="w-4 h-4 mr-2" />
+                <SelectTrigger className="w-full border-gray-300 focus:ring-2 focus:ring-[#0F2B4B] focus:border-[#0F2B4B] data-[state=open]:border-v data-[state=open]:ring-2 data-[state=open]:ring-[#0F2B4B]">
+                  <Globe className="w-4 h-4 mr-2 text-gray-500" />
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ru">Русский</SelectItem>
-                  <SelectItem value="uz">O'zbek</SelectItem>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="ar">العربية</SelectItem>
-                  <SelectItem value="zh">中文</SelectItem>
+                <SelectContent className="border-gray-200 shadow-lg">
+                  <SelectItem value="ru" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">Русский</SelectItem>
+                  <SelectItem value="uz" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">O'zbek</SelectItem>
+                  <SelectItem value="en" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">English</SelectItem>
+                  <SelectItem value="ar" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">العربية</SelectItem>
+                  <SelectItem value="zh" className="focus:bg-blue-50 focus:text-[#0F2B4B] data-[highlighted]:bg-blue-50 data-[highlighted]:text-[#0F2B4B]">中文</SelectItem>
                 </SelectContent>
               </Select>
 
-              {/* UPDATED MOBILE BUTTON */}
+              {/* Mobile Callback Button with Warm Terracotta */}
               <Button
                 onClick={handleCallbackClick}
-                className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                className="w-full bg-[#C2410C] text-white hover:bg-[#9A3412] transition-colors duration-200"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 {t.callBack}
@@ -295,18 +283,18 @@ export function Header({ lang, setLang }: HeaderProps) {
         )}
       </header>
 
-      {/* Optional: Add a callback modal */}
+      {/* Callback Modal */}
       {showCallbackModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg max-w-md w-full mx-4">
-            <h3 className="text-lg font-semibold mb-4">
-              {t.callBack} {/* Will show "Request a Callback" in English */}
+          <div className="bg-white p-6 rounded-lg max-w-md w-full mx-4 shadow-xl">
+            <h3 className="text-lg font-semibold mb-4 text-gray-900">
+              {t.callBack}
             </h3>
-            <p className="mb-4">We'll call you back within 15 minutes.</p>
+            <p className="mb-4 text-gray-600">We'll call you back within 15 minutes.</p>
             {/* Add form fields here */}
             <button
               onClick={() => setShowCallbackModal(false)}
-              className="mt-4 px-4 py-2 bg-gray-200 rounded"
+              className="mt-4 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded transition-colors duration-200"
             >
               Close
             </button>

@@ -11,6 +11,7 @@ import {
 import React from "react";
 import { getCommonHouse } from "../services/dataService";
 import { ReadyHome } from "../services/data.types";
+
 interface ApartmentFiltersProps {
   lang: "en" | "ru" | "uz" | "ar" | "zh";
   onFilterChange: (filters: FilterValues) => void;
@@ -99,15 +100,6 @@ const translations = {
   },
 };
 
-// Mock projects data - API dan kelgan loyihalar ro'yxati
-// const projectOptions = [
-//   { value: "all", label: "allProjects" },
-//   { value: "Bunyodkor House", label: "Bunyodkor House" },
-//   { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
-//   { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
-//   { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
-// ];
-
 export function ApartmentFilters({
   lang,
   onFilterChange,
@@ -143,10 +135,6 @@ export function ApartmentFilters({
 
   const newOpt = [
     { value: "all", label: "allProjects" },
-    // { value: "Bunyodkor House", label: "Bunyodkor House" },
-    // { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
-    // { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
-    // { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
   ];
 
   console.log(commonHouse);
@@ -155,14 +143,6 @@ export function ApartmentFilters({
     label: el?.title,
   }));
   console.log(commonHse);
-
-  // const projectOptions = [
-  //   { value: "all", label: "allProjects" },
-  //   { value: "Bunyodkor House", label: "Bunyodkor House" },
-  //   { value: "Fayzli uy kitob", label: "Fayzli uy kitob" },
-  //   { value: "Fayzli uy shahrisabz", label: "Fayzli uy shahrisabz" },
-  //   { value: "Fayzli uy gurlan", label: "Fayzli uy gurlan" },
-  // ];
 
   let projectOptions = [...newOpt, ...commonHse];
   console.log(projectOptions);
@@ -236,7 +216,7 @@ export function ApartmentFilters({
     <div className="w-full bg-white border border-gray-200 rounded-lg shadow-sm">
       <div className="p-8">
         {/* Title */}
-        <h2 className="text-[#C8A961] text-2xl font-bold mb-8 text-center">
+        <h2 className="text-[#C2410C] text-2xl font-bold mb-8 text-center">
           {t.title}
         </h2>
 
@@ -244,9 +224,9 @@ export function ApartmentFilters({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Property Type - Currently showing Apartments with count */}
           <div className="space-y-3">
-            <div className="flex items-center justify-between bg-[#526C6C] text-white rounded-full px-6 py-3">
+            <div className="flex items-center justify-between bg-[#0F2B4B] hover:bg-[#1A3A5F] text-white rounded-full px-6 py-3 transition-colors duration-200">
               <span className="font-medium">{t.apartments}</span>
-              <div className="bg-white text-[#526C6C] rounded-full w-8 h-8 flex items-center justify-center">
+              <div className="bg-white text-[#0F2B4B] rounded-full w-8 h-8 flex items-center justify-center">
                 <span className="text-sm font-bold">5</span>
               </div>
             </div>
@@ -267,8 +247,8 @@ export function ApartmentFilters({
                     onClick={() => handleRoomToggle(room)}
                     className={`flex-1 min-w-[60px] py-3 rounded-full border-2 transition-all duration-200 font-medium ${
                       isActive
-                        ? "bg-[#526C6C] text-white border-[#526C6C] shadow-md"
-                        : "bg-white text-gray-700 border-gray-300 hover:border-[#526C6C] hover:text-[#526C6C]"
+                        ? "bg-[#0F2B4B] text-white border-[#0F2B4B] shadow-md"
+                        : "bg-white text-gray-700 border-gray-300 hover:border-[#0F2B4B] hover:text-[#0F2B4B]"
                     }`}
                   >
                     {room}
@@ -287,7 +267,7 @@ export function ApartmentFilters({
               value={filters.projects}
               onValueChange={handleProjectsChange}
             >
-              <SelectTrigger className="w-full border-2 border-gray-300 rounded-full py-3 px-4 hover:border-[#526C6C] transition-colors">
+              <SelectTrigger className="w-full border-2 border-gray-300 rounded-full py-3 px-4 hover:border-[#0F2B4B] focus:ring-2 focus:ring-[#0F2B4B] focus:border-[#0F2B4B] transition-colors">
                 <SelectValue>
                   {getProjectLabel(
                     projectOptions.find((p) => p.value === filters.projects)!,
@@ -299,7 +279,7 @@ export function ApartmentFilters({
                   <SelectItem
                     key={project.value}
                     value={project.value}
-                    className="py-3 px-4 hover:bg-gray-50 cursor-pointer"
+                    className="py-3 px-4 hover:bg-gray-50 cursor-pointer data-[highlighted]:bg-[#0F2B4B] data-[highlighted]:text-white focus:bg-[#0F2B4B] focus:text-white"
                   >
                     {getProjectLabel(project)}
                   </SelectItem>
@@ -328,7 +308,7 @@ export function ApartmentFilters({
                 min={10}
                 max={360}
                 step={5}
-                className="w-full"
+                className="w-full [&_.slider-track]:bg-[#0F2B4B] [&_.slider-range]:bg-[#0F2B4B] [&_.slider-thumb]:border-[#0F2B4B]"
               />
             </div>
           </div>
@@ -356,7 +336,7 @@ export function ApartmentFilters({
                 min={-1}
                 max={52}
                 step={1}
-                className="w-full"
+                className="w-full [&_.slider-track]:bg-[#0F2B4B] [&_.slider-range]:bg-[#0F2B4B] [&_.slider-thumb]:border-[#0F2B4B]"
               />
             </div>
           </div>
@@ -375,8 +355,8 @@ export function ApartmentFilters({
                     onClick={() => handleYearToggle(year)}
                     className={`flex-1 min-w-[80px] py-3 rounded-full border-2 transition-all duration-200 font-medium ${
                       isActive
-                        ? "bg-[#C8A961] text-white border-[#C8A961] shadow-md"
-                        : "bg-white text-gray-700 border-gray-300 hover:border-[#C8A961] hover:text-[#C8A961]"
+                        ? "bg-[#C2410C] text-white border-[#C2410C] shadow-md"
+                        : "bg-white text-gray-700 border-gray-300 hover:border-[#C2410C] hover:text-[#C2410C]"
                     }`}
                   >
                     {year}
@@ -392,12 +372,12 @@ export function ApartmentFilters({
           <Button
             variant="ghost"
             onClick={clearFilters}
-            className="text-gray-600 hover:text-[#526C6C] hover:bg-gray-50 px-6 py-2 rounded-full transition-colors duration-200 font-medium"
+            className="text-gray-600 hover:text-[#C2410C] hover:bg-gray-50 px-6 py-2 rounded-full transition-colors duration-200 font-medium"
           >
             {t.clearFilters} ×
           </Button>
 
-          <div className="bg-[#526C6C] text-white px-8 py-3 rounded-full font-semibold shadow-md">
+          <div className="bg-[#0F2B4B] hover:bg-[#1A3A5F] text-white px-8 py-3 rounded-full font-semibold shadow-md transition-colors duration-200">
             {t.found}: {totalResults}
           </div>
         </div>

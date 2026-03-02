@@ -122,7 +122,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
   // Helper function to get localized field from Commonhouse
   const getLocalizedField = (
     house: Commonhouse,
-    field: "title" | "description"
+    field: "title" | "description",
   ): string => {
     const fieldMap = {
       title: {
@@ -221,7 +221,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
 
     // Check if it's a quarter format like "4th Quarter 2027"
     const quarterMatch = handover.match(
-      /(\d+)(?:st|nd|rd|th) Quarter (\d{4})/i
+      /(\d+)(?:st|nd|rd|th) Quarter (\d{4})/i,
     );
     if (quarterMatch) {
       const quarter = quarterMatch[1];
@@ -261,7 +261,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
           const title = getLocalizedField(project, "title");
           const generatedId = generateIdFromTitle(title);
           console.log(
-            `🔍 Comparing project: "${generatedId}" with "${projectId}"`
+            `🔍 Comparing project: "${generatedId}" with "${projectId}"`,
           );
           return generatedId === projectId;
         });
@@ -274,7 +274,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
           // Find the corresponding stats for this project using commonhouse ID
           const foundStats = allStats.find((stats) => {
             console.log(
-              `📊 Comparing stats: stats.commonhouse=${stats.commonhouse} with project.id=${foundProject.id}`
+              `📊 Comparing stats: stats.commonhouse=${stats.commonhouse} with project.id=${foundProject.id}`,
             );
             return stats.commonhouse === foundProject.id;
           });
@@ -428,7 +428,7 @@ const OurProjectsDetail: React.FC<OurProjectsDetailProps> = ({ lang }) => {
       </section>
 
       <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-[#526C6C] opacity-95"></div>
+        <div className="absolute inset-0 bg-[#0F2B4B] opacity-95"></div>
 
         <div
           className="absolute inset-0 opacity-5"

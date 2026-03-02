@@ -15,7 +15,7 @@ import {
 import No_img from "../assets/no-image-svg.svg";
 
 interface ApartmentFinderSectionProps {
-  lang:"en" | "ru" | "uz" | "ar" | "zh";
+  lang: "en" | "ru" | "uz" | "ar" | "zh";
 }
 
 const translations = {
@@ -127,7 +127,7 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
     // Memoized values
     const completionYear = useMemo(
       () => getYearFromDate(home.yearBuilt) || new Date().getFullYear(),
-      [home.yearBuilt]
+      [home.yearBuilt],
     );
 
     const areaNumber = useMemo(() => parseFloat(home.area) || 0, [home.area]);
@@ -144,7 +144,7 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
         e.stopPropagation();
         onCardClick(home.id);
       },
-      [onCardClick, home.id]
+      [onCardClick, home.id],
     );
 
     const handleImageError = useCallback(() => {
@@ -228,7 +228,7 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
 
           <div className="flex justify-between border-b border-dotted border-gray-200 pb-1">
             <span className="text-gray-500">{t.project}</span>
-            <span className="font-semibold text-yellow-600 truncate ml-2 max-w-[120px]">
+            <span className="font-semibold text-[#C2410C] truncate ml-2 max-w-[120px]">
               {homeName}
             </span>
           </div>
@@ -236,7 +236,7 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
 
         <div className="px-6 pb-6">
           <button
-            className="w-full flex items-center justify-center gap-2 border-2 border-gray-900 bg-white text-gray-900 font-semibold rounded-full py-2 transition-colors duration-300 hover:bg-yellow-600 hover:text-white hover:border-yellow-500"
+            className="w-full flex items-center justify-center gap-2 border-2 border-gray-900 bg-white text-gray-900 font-semibold rounded-full py-2 transition-colors duration-300 hover:bg-[#C2410C] hover:text-white hover:border-[#C2410C]"
             onClick={handleLearnMoreClick}
           >
             <Key size={18} />
@@ -245,7 +245,7 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 ApartmentCard.displayName = "ApartmentCard";
@@ -412,7 +412,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
 
   const previewHomes = useMemo(
     () => filteredHomes.slice(0, 3),
-    [filteredHomes]
+    [filteredHomes],
   );
 
   const handleFilterChange = useCallback((newFilters: FilterValues) => {
@@ -423,7 +423,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
     (homeId: number) => {
       navigate(`/home/${homeId}`);
     },
-    [navigate]
+    [navigate],
   );
 
   if (loading) {
@@ -431,7 +431,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
       <section id="ready" className="py-20 bg-gray-50" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-12">
-            <Loader2 className="w-8 h-8 animate-spin text-[#526C6C] mx-auto mb-4" />
+            <Loader2 className="w-8 h-8 animate-spin text-[#0F2B4B] mx-auto mb-4" />
             <div className="text-lg text-gray-600">{t.loading}</div>
           </div>
         </div>
@@ -470,7 +470,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
           {/* Preview Results */}
           <div className="mt-12">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-[#526C6C] text-xl font-semibold">
+              <h3 className="text-[#0F2B4B] text-xl font-semibold">
                 {t.preview}
               </h3>
               {filteredHomes.length > 3 && (
@@ -483,7 +483,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
 
             {searchLoading ? (
               <div className="text-center py-12 bg-white rounded-lg border border-gray-200">
-                <Loader2 className="w-8 h-8 animate-spin text-[#526C6C] mx-auto mb-4" />
+                <Loader2 className="w-8 h-8 animate-spin text-[#0F2B4B] mx-auto mb-4" />
                 <p className="text-gray-500">{t.loading}</p>
               </div>
             ) : previewHomes.length === 0 ? (
@@ -519,7 +519,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
               <div className="text-center mt-12">
                 <Button
                   size="lg"
-                  className="bg-[#C8A961] hover:bg-[#b39851] text-white px-12 py-6 text-lg font-semibold transition-colors duration-200 rounded-full"
+                  className="bg-[#C2410C] hover:bg-[#7c2705] text-white px-12 py-6 text-lg font-semibold transition-colors duration-200 rounded-full"
                   onClick={() => navigate("/catalog")}
                 >
                   {t.viewAllCatalog}
