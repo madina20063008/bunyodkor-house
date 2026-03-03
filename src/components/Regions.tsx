@@ -134,8 +134,8 @@ export function Regions({ lang }: RegionsProps) {
   };
 
   return (
-    <section id="regions" className="py-20 bg-muted">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="regions" className="py-20 bg-muted relative z-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl mb-4 text-primary">{t.title}</h2>
           <p className="text-xl text-muted-foreground mb-6">{t.subtitle}</p>
@@ -144,19 +144,18 @@ export function Regions({ lang }: RegionsProps) {
           </p>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg">
-          <div className="text-center mb-4">
+        {/* Map Container - Lower z-index */}
+        <div className="bg-white rounded-2xl p-8 mb-12 shadow-lg relative z-0">
+          <div className="text-center mb-4 relative z-10">
             <h3 className="text-xl font-semibold text-primary">{t.mapTitle}</h3>
-            {/* <p className="text-muted-foreground mt-2">
-              📍 Real Location: {realLocation.latitude.toFixed(4)}, {realLocation.longitude.toFixed(4)}
-            </p> */}
           </div>
-          <MapLeaflet mapLeaflet={mapLeaflet} />
+          <div className="relative z-0">
+            <MapLeaflet mapLeaflet={mapLeaflet} />
+          </div>
         </div>
 
-        {/* Regions Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Regions Grid - Higher z-index to appear above map if needed */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 relative z-20">
           {mapLeaflet.map((el) => (
             <div
               key={el?.id}
@@ -165,7 +164,7 @@ export function Regions({ lang }: RegionsProps) {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="mb-1">
+                  <h3 className="mb-1 font-semibold">
                     {getRegionName(
                       el?.address_en || "",
                       el?.address_ru || "",

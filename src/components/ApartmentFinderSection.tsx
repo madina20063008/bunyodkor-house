@@ -126,8 +126,8 @@ const ApartmentCard = React.memo<ApartmentCardProps>(
 
     // Memoized values
     const completionYear = useMemo(
-      () => getYearFromDate(home.yearBuilt) || new Date().getFullYear(),
-      [home.yearBuilt],
+      () => getYearFromDate(home.overDate) || new Date().getFullYear(),
+      [home.overDate],
     );
 
     const areaNumber = useMemo(() => parseFloat(home.area) || 0, [home.area]);
@@ -390,7 +390,7 @@ export function ApartmentFinderSection({ lang }: ApartmentFinderSectionProps) {
         }
 
         // Completion year filter
-        const yearBuilt = getYearFromDate(home.yearBuilt);
+        const yearBuilt = getYearFromDate(home.overDate);
         if (
           filters.completionYear.length > 0 &&
           yearBuilt &&

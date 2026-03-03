@@ -64,6 +64,7 @@ export interface ReadyHome {
   masterplan: Image[];
   interiorphotos: Image[];
   interior_photos: Image[];
+  overDate?: string;
 }
 
 export interface CommonImage {
